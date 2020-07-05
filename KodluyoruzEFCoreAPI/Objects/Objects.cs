@@ -4,11 +4,12 @@ using KodluyoruzEFCoreAPI.DAL.Entities.Core;
 
 namespace KodluyoruzEFCoreAPI.Objects
 {
-    public class Blog
+    public class Blog : IEntity
     {
         public int BlogId { get; set; }
         public string Url { get; set; }
         public int Rating { get; set; }
+        public int slug { get; set; }
 
         public List<Post> Posts { get; } = new List<Post>();
     }

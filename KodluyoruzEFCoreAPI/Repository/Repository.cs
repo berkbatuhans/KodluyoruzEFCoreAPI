@@ -27,13 +27,13 @@ namespace KodluyoruzEFCoreAPI.Repository
         }
 
         public IQueryable<TEntity> Query()
-            => Entities.AsQueryable();
+            => Entities.AsQueryable().TagWith("Query Parametresi Çalıştırıldı " + nameof(TEntity));
 
         public ICollection<TEntity> GetAll()
             => Entities.ToList();
 
         public async Task<ICollection<TEntity>> GetAllAsync()
-            => await Entities.ToListAsync();
+            => await Entities.TagWith("GetAllAsync Parametresi Çalıştırıldı " + nameof(TEntity)).ToListAsync();
 
         public TEntity GetById(int id)
             => Entities.Find(id);

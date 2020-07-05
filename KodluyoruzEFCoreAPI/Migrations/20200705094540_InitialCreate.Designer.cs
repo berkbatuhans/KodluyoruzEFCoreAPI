@@ -3,14 +3,16 @@ using KodluyoruzEFCoreAPI.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace KodluyoruzEFCoreAPI.Migrations
 {
     [DbContext(typeof(KodluyoruzDbContext))]
-    partial class KodluyoruzDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200705094540_InitialCreate")]
+    partial class InitialCreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -30,9 +32,6 @@ namespace KodluyoruzEFCoreAPI.Migrations
 
                     b.Property<string>("Url")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("slug")
-                        .HasColumnType("int");
 
                     b.HasKey("BlogId");
 

@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KodluyoruzEFCoreAPI.Migrations
 {
     [DbContext(typeof(KodluyoruzDbContext))]
-    [Migration("20200705074416_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20200705095031_AddBlogSlug")]
+    partial class AddBlogSlug
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -32,6 +32,9 @@ namespace KodluyoruzEFCoreAPI.Migrations
 
                     b.Property<string>("Url")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("slug")
+                        .HasColumnType("int");
 
                     b.HasKey("BlogId");
 
