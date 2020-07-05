@@ -10,6 +10,10 @@ dotnet ef database update
 
 dotnet run
 
+# Swagger UI
+
+https://localhost:5001/swagger
+
 # Projenin Test URL'i
 
-localhost/Post
+https://localhost:5001/Post
